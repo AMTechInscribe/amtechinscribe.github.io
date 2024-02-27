@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dynamicCorporateApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Corporate Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            color: #ecf0f1;
+        }
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 40px 20px;
+        }
+        footer {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        h2, h3 {
+            color: #3498db;
+        }
+        .service-icon {
+            font-size: 48px;
+            color: #ecf0f1;
+        }
+        .service-description {
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+<body ng-controller="dynamicCorporateCtrl">
+
+    <header>
+        <h1>{{ companyName }}</h1>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Welcome to our Dynamic Corporate Website!</h2>
+                    <p>{{ companyDescription }}</p>
+                </div>
+                <div class="col-md-6">
+                    <i class="fas fa-building service-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #3498db; color: white;">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="row">
+                <div class="col-md-4" ng-repeat="service in services">
+                    <div class="text-center">
+                        <i class="{{ service.icon }} service-icon"></i>
+                        <h3>{{ service.name }}</h3>
+                        <p class="service-description">{{ service.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Dynamic Corporate. All rights reserved.</p>
+    </footer>
+
+    <!-- Add your AngularJS and additional JavaScript code here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        angular.module('dynamicCorporateApp', []).controller('dynamicCorporateCtrl', function ($scope) {
+            $scope.companyName = 'Dynamic Corporate';
+            $scope.companyDescription = 'Building Tomorrow, Today!';
+            
+            $scope.services = [
+                {
+                    name: 'Web Development',
+                    description: 'Creating responsive and dynamic websites.',
+                    icon: 'fas fa-code'
+                },
+                {
+                    name: 'E-commerce Solutions',
+                    description: 'Designing and implementing online stores.',
+                    icon: 'fas fa-shopping-cart'
+                },
+                {
+                    name: 'Web Design',
+                    description: 'Crafting visually appealing and user-friendly designs.',
+                    icon: 'fas fa-paint-brush'
+                }
+                // Add more services as needed
+            ];
+        });
+    </script>
+</body>
+</html>

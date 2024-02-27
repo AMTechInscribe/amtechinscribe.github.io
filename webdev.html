@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development - AMTechInscribe</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="56x56" href="AMTechInscribe.jpg">
+  <link rel="stylesheet" href="styles.css"> <!-- Add your custom styles here -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      padding: 50px 0;
+    }
+
+    .navbar {
+      background-color: #000 !important;
+      padding: 15px;
+      transition: background-color 0.5s;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar a {
+      color: #ff4d4d !important;
+      transition: color 0.5s;
+    }
+
+    .navbar a:hover {
+      color: #ff9999 !important;
+    }
+
+    .navbar-toggler-icon {
+      background-color: #ff4d4d;
+    }
+
+    .navbar-toggler {
+      border-color: #ff4d4d;
+    }
+
+    .navbar-toggler:hover {
+      background-color: #ff9999;
+    }
+
+    .navbar-brand {
+      color: #ff4d4d !important;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-nav {
+      margin-left: auto;
+    }
+
+    .navbar-nav .nav-item {
+      margin-right: 20px;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-size: 18px;
+      transition: color 0.5s;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ff9999 !important;
+      background-color: blue !important;
+    }
+
+    .jumbotron {
+      background-color: #fff;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .jumbotron h1 {
+      font-size: 4em;
+      font-weight: bold;
+      color: #1a1a1a;
+      text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .lead {
+      font-size: 1.8em;
+      margin-bottom: 30px;
+    }
+
+    .btn-primary {
+      background-color: #ff4d4d;
+      border-color: #ff4d4d;
+      font-size: 20px;
+      padding: 15px 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .points h2 {
+      color: #ff4d4d;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    
+    .points li {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      list-style-type: none;
+      position: relative;
+    }
+
+    .points li:before {
+      content: '\2022';
+      color: #ff4d4d;
+      font-size: 24px;
+      display: flex;
+      width: 1em;
+      margin-left: -1em;
+      position: absolute;
+    }
+
+    /* Custom Styles for Featured Services Section */
+#featured-services {
+  padding: 50px 0;
+}
+
+.section-heading {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ff4d4d;
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.feature-section {
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 3em;
+  color: #ff4d4d;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.feature-title {
+  font-size: 2em;
+  font-weight: bold;
+  color:black;
+  margin-bottom: 20px;
+}
+.col-md-4{
+  border-color: gray !important;
+}
+.feature-description {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+
+    .additional-section {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background-color: #fff;
+      color: #1a1a1a;
+      padding: 50px 0;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .additional-section i {
+      font-size: 5em;
+      color: #ff4d4d;
+      margin-bottom: 20px;
+      text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .additional-title {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #ff4d4d;
+      margin-bottom: 30px;
+    }
+
+    .additional-content {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+
+    .btn-secondary {
+      background-color: #ff4d4d;
+      border-color: #ff4d4d;
+      font-size: 20px;
+      padding: 15px 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+      /* Add your responsive styles here if needed */
+      .navbar-nav {
+        margin-top: 10px;
+      }
+
+      .navbar-nav .nav-item {
+        margin: 0 10px;
+      }
+
+      .jumbotron {
+        padding: 30px;
+      }
+
+      .display-4 {
+        font-size: 3em;
+      }
+
+      .lead {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+      
+      .points h2 {
+        font-size: 2em;
+      }
+
+      .points li {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .feature-icon {
+        font-size: 2em;
+      }
+
+      .feature-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .feature-description {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+
+      .additional-section {
+        flex-direction: column-reverse;
+      }
+
+      .additional-section img {
+        margin-bottom: 20px;
+        margin-right: 0;
+      }
+
+      .additional-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      .additional-content {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+
+
+      
+    }
+  /* Nested List Styles */
+  .nested-list {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #343a40; /* Match the background color with the parent list */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 1;
+    width: max-content; /* Adjust the width as needed */
+    border-radius: 4px; /* Add rounded corners for a more attractive look */
+  }
+
+  /* Show the nested list when its parent is hovered or focused */
+  .nav-item:hover .nested-list,
+  .nav-item:focus-within .nested-list {
+    display: block;
+  }
+
+  /* Style for each nested list item */
+  .nested-list li {
+    padding: 8px 16px;
+  }
+
+  /* Change the text color of nested list items */
+  .nested-list a {
+    color: white; /* Match the text color with the parent list */
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s; /* Smooth color transition on hover */
+  }
+
+  /* Change the hover color for nested list items */
+  .nested-list a:hover {
+    background-color: blue; /* Adjust hover background color as needed */
+    color: white; /* Change text color on hover */
+  }
+
+  /* Add space between nested items */
+  .nested-list li + li {
+    margin-top: 5px; /* Adjust the margin as needed */
+  }
+
+   @media (max-width: 767px) {
+    #choose-commitment {
+      flex-direction: column; /* Change flex direction to column on mobile view */
+      align-items: center; /* Center align items in mobile view */
+    }
+
+    .points {
+      width: 100%; /* Full width on mobile view */
+    }
+
+    .points h2 {
+      text-align: center; /* Center align the heading on mobile view */
+    }
+
+    .points ul {
+      padding-left: 20px; /* Add some left padding for better readability */
+    }
+
+    .points li {
+      display: block; /* Display each point in a new line on mobile view */
+      margin-bottom: 10px; /* Add space between points for better readability */
+    }
+  }
+ 
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">
+      <img src="AMTechInscribe.jpg" alt="AMTechInscribe Logo" width="50" height="50" style="border-radius: 5px;" class="d-inline-block align-top">
+      AMTechInscribe
+    </a>
+    <!-- Add the responsive navigation button here -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+          <ul class="nested-list">
+            <li><a href="webdev.html">Web Development</a></li>
+            <li><a href="ecomm.html">E-commerce Solutions</a></li>
+            <li><a href="webdesign.html">Web Design</a></li>
+            <li><a href="niche.html">Niche Specialization</a></li>
+             <li><a href="uiux.html">UI/UX Design</a></li>
+            <li><a href="graphic.html">Graphic & logo Design</a></li>
+            <li><a href="host.html">Web Hosting and Maintenance</a></li>
+            <li><a href="train.html">Consulting and Training</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:amtechinscribe@gmail.com">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pt.html">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="insight.html">Insights</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+    <!-- Jumbotron -->
+    <section class="jumbotron">
+        <div class="container text-center">
+            <h1 class="display-4">Empowering Businesses Through Innovative Web Development</h1>
+            <p class="lead">Crafting dynamic and static websites with precision and innovation.</p>
+            <a class="btn btn-primary" href="#dynamic">Dynamic Development</a>
+            <a class="btn btn-secondary" href="#static">Static Development</a>
+        </div>
+    </section>
+
+    <!-- Dynamic Development Section -->
+    <section id="dynamic" class="feature-section">
+        <div class="container text-center">
+            <h2 class="section-heading">Dynamic Website Development</h2>
+            <!-- Add more icons and content here -->
+            <i class="fas fa-code feature-icon"></i>
+            <h3 class="feature-title">SQL Models Sketch</h3>
+            <p class="feature-description">Plan the structure and relationships of your database tables using a sketch. This is the blueprint for your dynamic website.</p>
+
+            <i class="fas fa-wrench feature-icon"></i>
+            <h3 class="feature-title">SQL Models Tool</h3>
+            <p class="feature-description">Utilize advanced tools to create and visualize SQL models for efficient development. Streamline the process of translating ideas into data structures.</p>
+
+            <i class="fas fa-database feature-icon"></i>
+            <h3 class="feature-title">Database Creation</h3>
+            <p class="feature-description">Set up a robust and scalable database infrastructure based on your SQL models. This is the backbone of your dynamic website, ensuring data integrity and accessibility.</p>
+
+            <!-- Repeat similar structure for other dynamic development steps -->
+
+        </div>
+    </section>
+
+    <!-- Static Development Section -->
+    <section id="static" class="feature-section">
+        <div class="container text-center">
+            <h2 class="section-heading">Static Website Development</h2>
+            <!-- Add more icons and content here -->
+            <i class="fas fa-paint-brush feature-icon"></i>
+            <h3 class="feature-title">Theme Color Choice</h3>
+            <p class="feature-description">Choose the color scheme that aligns with the brand or design preferences. Colors evoke emotions and set the tone for your static website.</p>
+
+            <i class="fas fa-file-code feature-icon"></i>
+            <h3 class="feature-title">Wireframing</h3>
+            <p class="feature-description">Create detailed wireframes to outline the structure and layout of the static website. It's like creating a roadmap before building the actual site.</p>
+
+            <i class="fas fa-laptop-code feature-icon"></i>
+            <h3 class="feature-title">Code Implementation</h3>
+            <p class="feature-description">Develop a responsive and visually appealing website using HTML, CSS, and JavaScript. The code is the language that brings your static site to life.</p>
+
+            <!-- Repeat similar structure for other static development steps -->
+
+        </div>
+    </section>
+
+    <!-- Additional Section with Icons -->
+    <section class="additional-section">
+        <div class="container text-center">
+            <i class="fas fa-cogs"></i>
+            <h2 class="additional-title">Advanced Development</h2>
+            <p class="additional-content">Implementing cutting-edge technologies for optimal website performance. Our commitment to staying at the forefront of technological advancements sets us apart.</p>
+        </div>
+    </section>
+ <!-- Slogans Section -->
+    <section class="additional-section">
+        <div class="container text-center">
+            <i class="fas fa-comment-alt"></i>
+            <h2 class="additional-title">Our Slogans</h2>
+            <p class="additional-content">"Turning Visions into Digital Realities" <br> "Innovation in Every Line of Code"</p>
+        </div>
+    </section>
+    <!-- Additional Content Section -->
+    <section class="additional-section">
+        <div class="container text-center">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h2 class="additional-title">Continuous Learning</h2>
+            <p class="additional-content">Staying updated with the latest web development trends and technologies to deliver top-notch solutions. In the ever-evolving digital landscape, learning is a constant journey.</p>
+        </div>
+    </section>
+
+   
+
+    <!-- Technical Definitions Section -->
+   
+
+    <!-- Footer -->
+   <!-- Footer Section -->
+ <!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-3">
+  <div class="container">
+    <div class="row">
+      <!-- Company Logo and Name -->
+      <div class="col-md-3">
+        <img src="AMTechInscribe.jpg" alt="AMTechInscribe Logo" width="70" height="70" style="border-radius: 7px;" class="mb-2">
+        <h3 class="company-name mb-0">AMTechInscribe</h3>
+        <p>Crafting Tomorrow's Code, Today!</p>
+      </div>
+
+      <!-- Company Title and Navigation -->
+      <div class="col-md-3 text-left">
+        <h4 class="footer-title mb-3">Company</h4>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-white">Home</a></li>
+          <li><a href="about.html" class="text-white">About Us</a></li>
+          <li><a href="mailto:amtechinscribe@gmail.com" class="text-white">Contact</a></li>
+           <li><a href="pt.html" class="text-white">Gallery</a></li>
+          <li><a href="insight.html" class="text-white">Insights</a></li>
+        </ul>
+      </div>
+
+       <div class="col-md-3 text-left">
+        <h4 class="footer-title mb-3">Services</h4>
+        <ul class="list-unstyled">
+          <li><a href="webdev.html" class="text-white">Web Development</a></li>
+          <li><a href="ecomm.html" class="text-white">E-commerce Solutions</a></li>
+          <li><a href="webdesign.html" class="text-white">Web Design</a></li>
+          <li><a href="niche.html" class="text-white">Niche Specialization</a></li>
+          <li><a href="uiux.html"  class="text-white">UI/UX Design</a></li>
+            <li><a href="graphic.html"  class="text-white">Graphic & logo Design</a></li>
+          <li><a href="host.html" class="text-white">Web Hosting and Maintenance</a></li>
+           <li><a href="train.html" class="text-white">Consulting and Training</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="col-md-3 text-left">
+        <h4 class="footer-title mb-3">Follow Us</h4>
+        <ul class="list-inline social-icons">
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-instagram"></i></a></li>
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fas fa-phone-alt"></i></a></li>
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fas fa-envelope"></i></a></li>
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2023 AMTechInscribe. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap and JavaScript Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
